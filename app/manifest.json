@@ -1,8 +1,8 @@
 {
-  "name": "github-chat",
+  "name": "ReadIt",
   "version": "1.0.0",
   "manifest_version": 2,
-  "description": "Chat within GitHub",
+  "description": "Read the text",
   "icons": {
     "16": "images/16.png",
     "128": "images/128.png"
@@ -11,7 +11,7 @@
     {
       "run_at": "document_start",
       "matches": [
-        "https://github.com/*"
+        "<all_urls>"
       ],
       "js": [
         "scripts/content.js",
@@ -19,7 +19,7 @@
       ]
     }
   ],
-  "permissions": ["https://github.com/*"],
+  "permissions": ["<all_urls>"],
   "content_security_policy": "frame-src 'self' https://embed.tlk.io; default-src 'self' https://embed.tlk.io/",
   "web_accessible_resources": [
     "iframe.html",

@@ -14,6 +14,12 @@ function createOverlay() {
 
   container.appendChild(top)
   container.appendChild(box)
+
+  var input = document.createElement("input");
+input.type = "text";
+input.text = "Hi, My name is Mukesh Kumar!";
+  container.append(input);
+
   document.body.appendChild(container)
 
   const iframe = createiFrame()
@@ -21,18 +27,15 @@ function createOverlay() {
 }
 
 function createiFrame() {
-  let baseUrl = chrome.runtime.getURL('iframe.html')
-  // baseUrl = encodeURIComponent(baseUrl)
+  
   let iframe = document.createElement('iframe')
   iframe.id = 'github-chat-box-iframe-wrapper'
   
   iframe.style.width = '100%'
   iframe.style.height = '100%'
+  
 
-  const link = 'https://embed.tlk.io/' + makeChannelName() + '/' + '?nickname=' + getCurrentUser()
-  let url = encodeURIComponent(link)
-  iframe.src = `${baseUrl}?url=${url}`
-
+  
   return iframe
 }
 
@@ -54,7 +57,7 @@ function createContainer() {
 
 function createTop() {
   const div = document.createElement('div')
-  div.id = 'github-chat-top'
+  div.id = 'ReadIt'
 
   div.style.background = '#4080FF'
   div.style.height = '30px'
@@ -74,6 +77,7 @@ function createBox() {
 
   div.style.height = '400px'
   div.style.background = '#E9EBEE'
+  div.style.color='red'
   div.style.display = 'none'
 
   div.setAttribute('data-channel', makeChannelName())
@@ -84,7 +88,7 @@ function createBox() {
 
 function createTitle() {
   const a = document.createElement('a')
-  a.innerText = 'github-chat'
+  a.innerText = 'ReadIt'
   a.href = 'https://github.com/onmyway133/github-chat'
   a.target = 'blank'
 
